@@ -1,18 +1,22 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 
-import LinkButton from "@/components/home/LinkButton";
-import Background from "@/components/home/Background";
+import HomePageComponent from "@/components/home/HomePageComponents/HomePageComponent";
+import Loader from "@/components/Loader/Loader";
 
 export default function Home() {
-  return (
-    <React.Fragment>
-      <LinkButton link="/about_us" classNames="about" />
-      <LinkButton link="/contacts" classNames="contacts" />
-      <LinkButton link="/gallery" classNames="gallery" />
-      <LinkButton link="/lore" classNames="lore" />
-      <LinkButton link="/ranks" classNames="ranks" />
-      <LinkButton link="/team" classNames="team" />
-      <Background />
-    </React.Fragment>
+  const [isLoading, setIsLoading] = useState(
+    !sessionStorage.getItem("visited")
   );
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("visited")) {
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+        sessionStorage.setItem("visited", "true");
+      }, 4000);
+    }
+  }, []);
+  return isLoading ? <Loader /> : <HomePageComponent />;
 }
