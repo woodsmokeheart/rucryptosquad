@@ -39,7 +39,7 @@ export default function Home() {
         />
       </div>
 
-      {/* <div className={styles.grid}>
+      <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
@@ -89,7 +89,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div> */}
+      </div>
     </main>
   );
 }
