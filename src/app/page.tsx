@@ -1,10 +1,18 @@
-import styles from "../styles/page.module.css";
-import Link from "next/link";
+import React from "react";
+
+import LinkButton from "@/components/home/LinkButton";
+import Background from "@/components/home/Background";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <Link href="/about_us">AboutUs</Link>
-    </main>
+    <React.Fragment>
+      <LinkButton link="/about_us" classNames="about" />
+      <LinkButton link="/contacts" classNames="contacts" />
+      <LinkButton link="/gallery" classNames="gallery" />
+      <LinkButton link="/lore" classNames="lore" />
+      <LinkButton link="/ranks" classNames="ranks" />
+      <LinkButton link="/team" classNames="team" />
+      <Background />
+    </React.Fragment>
   );
 }
