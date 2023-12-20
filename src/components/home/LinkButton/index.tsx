@@ -11,8 +11,12 @@ interface LinkButtonProps {
 
 const LinkButton: React.FC<LinkButtonProps> = ({ link, classNames }) => {
   return (
-    <Link href={link} className={cn("button", styles[classNames])}>
-      <div className={styles.core} />
+    <Link href={link}>
+      <div className={cn("button", styles[classNames])}>
+        <div className={styles.central_shadow}>
+          <div className={styles.core} />
+        </div>
+      </div>
     </Link>
   );
 };
