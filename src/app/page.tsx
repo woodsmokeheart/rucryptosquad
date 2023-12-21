@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 
-import HomePageComponent from "@/components/home/HomePageComponents";
+import HomePageSetting from "@/pages/HomePageSetting";
 
 export default function Home() {
-  return <HomePageComponent />;
+  return <HomePageSetting />;
 }
