@@ -1,9 +1,14 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
-export default function Lore() {
+function Lore() {
   return (
     <main>
       <Link href="/">Home</Link>
     </main>
   );
 }
+
+export default dynamic(() => Promise.resolve(Lore), {
+  ssr: false,
+});

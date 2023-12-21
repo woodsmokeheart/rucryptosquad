@@ -1,9 +1,14 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 
-export default function Contacts() {
+function Contacts() {
   return (
     <main>
       <Link href="/">Home</Link>
     </main>
   );
 }
+
+export default dynamic(() => Promise.resolve(Contacts), {
+  ssr: false,
+});
