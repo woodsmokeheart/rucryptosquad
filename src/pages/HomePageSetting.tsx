@@ -1,8 +1,11 @@
-import HomePageDesktop from "@/components/home/ResponsiveScreens/HomePageDesktop";
 import React from "react";
+import HomePageDesktop from "@/components/home/ResponsiveScreens/HomePageDesktop";
+import HomePageMobile from "@/components/home/ResponsiveScreens/HomePageMobile";
+import useResize from "@/hooks/useResize";
 
-const HomePageComponent = () => {
-  return <HomePageDesktop />;
+const HomePageSetting = () => {
+  const { isScreenXl } = useResize();
+  return isScreenXl ? <HomePageDesktop /> : <HomePageMobile />;
 };
 
-export default HomePageComponent;
+export default HomePageSetting;
