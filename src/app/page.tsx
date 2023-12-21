@@ -6,13 +6,18 @@ import dynamic from "next/dynamic";
 import Loader from "@/components/Loader/Loader";
 
 function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(
+    !sessionStorage.getItem("visited")
+  );
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-    return () => clearTimeout(timeout);
+    if (!sessionStorage.getItem("visited")) {
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+        sessionStorage.setItem("visited", "true");
+      }, 4000);
+    }
   }, []);
 
   return <>{isLoading ? <Loader /> : <HomePageSetting />}</>;
