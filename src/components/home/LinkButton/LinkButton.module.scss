@@ -6,7 +6,10 @@
   z-index: 1;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.3);
-  animation: pulse 2s infinite;
+  &:hover {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
 
   .central_shadow {
     width: 40px;
@@ -59,6 +62,22 @@
   top: 25%;
   left: 50%;
   transform: translate(-25%, -50%);
+}
+
+.about,
+.contacts,
+.gallery,
+.lore,
+.ranks,
+.team {
+  opacity: 0;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease-in-out;
+
+  &.appear {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 @keyframes pulse {

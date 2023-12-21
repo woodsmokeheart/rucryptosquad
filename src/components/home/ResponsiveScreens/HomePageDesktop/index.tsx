@@ -1,37 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import LinkButton from "../../LinkButton";
 import Background from "../../Background";
 
 const HomePageDesktop = () => {
-  const [buttonsVisible, setButtonsVisible] = useState(true);
+  const [appear, setAppear] = useState(false);
 
-  const handleBackgroundClick = () => {
-    setButtonsVisible(true);
-    setTimeout(() => {
-      setButtonsVisible(false);
-    }, 5000);
-  };
-
-  useEffect(() => {
+  const showButtonsTimeoutFn = useCallback(() => {
+    setAppear(true);
     const timeout = setTimeout(() => {
-      setButtonsVisible(false);
-    }, 5000);
+      setAppear(false);
+    }, 3000);
 
     return () => clearTimeout(timeout);
   }, []);
+
+  useEffect(() => {
+    showButtonsTimeoutFn();
+  }, [showButtonsTimeoutFn]);
+
   return (
     <React.Fragment>
-      {buttonsVisible && (
-        <React.Fragment>
-          <LinkButton link="/about_us" classNames="about" />
-          <LinkButton link="/contacts" classNames="contacts" />
-          <LinkButton link="/gallery" classNames="gallery" />
-          <LinkButton link="/lore" classNames="lore" />
-          <LinkButton link="/ranks" classNames="ranks" />
-          <LinkButton link="/team" classNames="team" />
-        </React.Fragment>
-      )}
-      <Background onClick={handleBackgroundClick} />
+      <LinkButton link="/about_us" classNames="about" appear={appear} />
+      <LinkButton link="/contacts" classNames="contacts" appear={appear} />
+      <LinkButton link="/gallery" classNames="gallery" appear={appear} />
+      <LinkButton link="/lore" classNames="lore" appear={appear} />
+      <LinkButton link="/ranks" classNames="ranks" appear={appear} />
+      <LinkButton link="/team" classNames="team" appear={appear} />
+      <Background onClick={showButtonsTimeoutFn} />
     </React.Fragment>
   );
 };
