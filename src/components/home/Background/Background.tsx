@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import background from "../../../assets/img/home_background.jpg";
+import background from "../../../assets/img/sity.png";
 
 interface BackgroundProps {
   src?: JSX.Element;

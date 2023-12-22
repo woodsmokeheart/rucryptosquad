@@ -20,7 +20,15 @@ function Home() {
     }
   }, []);
 
-  return <>{isLoading ? <Loader /> : <HomePageSetting />}</>;
+  return (
+    <>
+      {isLoading ? (
+        <Loader title="Welcome to Ethereon" glitch="Welcome to Ethereon" />
+      ) : (
+        <HomePageSetting />
+      )}
+    </>
+  );
 }
 
 export default dynamic(() => Promise.resolve(Home), {

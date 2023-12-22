@@ -1,11 +1,16 @@
 import React from "react";
 import styles from "./Loader.module.scss";
 
-const Loader = () => {
+interface LoaderProps {
+  title: string;
+  glitch: string;
+}
+
+const Loader: React.FC<LoaderProps> = ({ title, glitch }) => {
   return (
     <div className={styles.loader}>
-      <div data-glitch="Welcome to Ethereon" className={styles.glitch}>
-        Welcome to Ethereon
+      <div data-glitch={glitch} className={styles.glitch}>
+        {title}
       </div>
     </div>
   );
