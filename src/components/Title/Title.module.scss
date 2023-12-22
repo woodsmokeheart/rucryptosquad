@@ -1,0 +1,27 @@
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  padding: 50px;
+  font-weight: 600;
+  font-size: 42px;
+  animation: ascent 3s ease-in-out forwards;
+}
+
+@keyframes ascent {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}

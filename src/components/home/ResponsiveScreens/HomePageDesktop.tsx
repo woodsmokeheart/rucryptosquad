@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import LinkButton from "../LinkButton/LinkButton";
 import Background from "../Background/Background";
+import Title from "@/components/Title/Title";
 
 const HomePageDesktop = () => {
   const [appear, setAppear] = useState(false);
@@ -57,6 +58,7 @@ const HomePageDesktop = () => {
         position="team_position"
         appear={appear}
       />
+      <Title title="Raider Street" />
       <Background onClick={showButtonsTimeoutFn} />
     </React.Fragment>
   );

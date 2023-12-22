@@ -32,7 +32,7 @@
   &:hover {
     .tooltip {
       display: block;
-      animation: zoomIn 0.5s ease forwards;
+      animation: slideTop 0.5s ease forwards;
     }
   }
 }
@@ -43,7 +43,7 @@
   left: 19%;
   transform: translate(-50%, -50%);
 }
-.gallery_position{
+.gallery_position {
   @extend %tooltip;
   top: 24%;
   left: 32%;
@@ -115,14 +115,14 @@
   }
 }
 
-@keyframes zoomIn {
+@keyframes slideTop {
   0% {
     opacity: 0;
     transform: translate(-40%, -40%);
   }
   100% {
     opacity: 1;
-    transform: translate(-40%,0%);
+    transform: translate(-40%, 0%);
   }
 }
 
