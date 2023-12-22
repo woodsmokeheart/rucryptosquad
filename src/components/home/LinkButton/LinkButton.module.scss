@@ -2,8 +2,6 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  position: absolute;
-  z-index: 1;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   &:hover {
@@ -27,38 +25,48 @@
   }
 }
 
-.about {
-  @extend %button;
+%tooltip {
+  position: absolute;
+  z-index: 1;
+  &:hover {
+    .tooltip {
+      display: block;
+    }
+  }
+}
+
+.about_position {
+  @extend %tooltip;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.contacts {
-  @extend %button;
+.contacts_position {
+  @extend %tooltip;
   top: 25%;
   left: 25%;
   transform: translate(-25%, -25%);
 }
-.gallery {
-  @extend %button;
+.gallery_position {
+  @extend %tooltip;
   top: 75%;
   left: 75%;
   transform: translate(-75%, -75%);
 }
-.lore {
-  @extend %button;
+.lore_position {
+  @extend %tooltip;
   top: 25%;
   right: 25%;
   transform: translate(-25%, -25%);
 }
-.ranks {
-  @extend %button;
+.ranks_position {
+  @extend %tooltip;
   top: 75%;
   right: 75%;
   transform: translate(-75%, -75%);
 }
-.team {
-  @extend %button;
+.team_position {
+  @extend %tooltip;
   top: 25%;
   left: 50%;
   transform: translate(-25%, -50%);
@@ -70,6 +78,7 @@
 .lore,
 .ranks,
 .team {
+  @extend %button;
   opacity: 0;
   animation: pulse 2s infinite;
   transition: all 0.3s ease-in-out;
@@ -77,6 +86,31 @@
   &.appear {
     opacity: 1;
     transition: all 0.3s ease-in-out;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  display: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #333 transparent;
   }
 }
 
