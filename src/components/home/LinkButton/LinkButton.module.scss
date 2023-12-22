@@ -28,9 +28,11 @@
 %tooltip {
   position: absolute;
   z-index: 1;
+
   &:hover {
     .tooltip {
       display: block;
+      animation: zoomIn 0.5s ease forwards;
     }
   }
 }
@@ -92,26 +94,15 @@
 .tooltip {
   position: absolute;
   z-index: 1;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -160px;
+  transform: translateX(-40%);
   padding: 8px;
   background-color: #333;
+  width: 300px;
+  height: 150px;
   color: #fff;
   border-radius: 4px;
   display: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 8px;
-    border-style: solid;
-    border-color: transparent transparent #333 transparent;
-  }
 }
 
 @keyframes pulse {
@@ -121,5 +112,22 @@
   }
   50% {
     transform: scale(1.2);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: translate(-40%, -40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-40%,0%);
+  }
+}
+
+@media (max-height: 820px) {
+  .tooltip {
+    top: 80px;
   }
 }

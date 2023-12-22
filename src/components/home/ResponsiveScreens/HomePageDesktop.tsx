@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 
-import LinkButton from "../../LinkButton";
-import Background from "../../Background";
+import LinkButton from "../LinkButton/LinkButton";
+import Background from "../Background/Background";
 
 const HomePageDesktop = () => {
   const [appear, setAppear] = useState(false);
