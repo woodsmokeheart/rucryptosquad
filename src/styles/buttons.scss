@@ -1,0 +1,371 @@
+%button {
+  position: relative;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  background: transparent;
+  color: black;
+  transition: all 0.2s ease-in-out;
+
+  &:not(div, span) {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+//BUTTONS TEXT
+
+.text_btn {
+  @extend %button;
+  padding: 8px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+
+  &.leftIcon {
+    padding: 10px 16px 10px 12px;
+  }
+
+  &.rightIcon {
+    padding: 10px 12px 10px 16px;
+  }
+
+  &.twoIcons {
+    padding: 10px 12px 10px 12px;
+  }
+
+  &:hover:not(:disabled) {
+    background: var(--tonal-tonal-30, rgba(9, 30, 66, 0.08));
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:active {
+    background: var(--tonal-tonal-40, rgba(9, 30, 66, 0.13));
+    transition: all 0.2s ease-in-out;
+  }
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.text_rounded_btn {
+  @extend %button;
+  border-radius: 100px;
+  transition: all 0.2s ease-in-out;
+  padding: 8px;
+
+  &.base {
+    padding: 10px 12px 10px 12px;
+  }
+
+  &.leftIcon {
+    padding: 10px 16px 10px 12px;
+  }
+
+  &.rightIcon {
+    padding: 10px 12px 10px 16px;
+  }
+
+  &.circle {
+    padding: 8px;
+  }
+
+  &:hover:not(:disabled) {
+    background: rgba(9, 30, 66, 0.08);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:active {
+    background: rgba(9, 30, 66, 0.13);
+    transition: all 0.2s ease-in-out;
+  }
+  &:disabled {
+    opacity: 0.3;
+  }
+}
+
+.text_only_btn {
+  @extend %button;
+  background: var(--color-text-1, #090a0b);
+  color: var(--color-text-5, #fff);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+
+  &.basic_s {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+    padding: 4px 12px;
+  }
+
+  &.basic_m {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 6px 16px;
+  }
+
+  &.basic_l {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 10px 24px;
+  }
+
+  &.basic_xl {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 12px 32px;
+  }
+
+  &:hover {
+    border-radius: 3px;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      ),
+      #090a0b;
+    transition: all 0.2s ease-in-out;
+  }
+  &:active {
+    border-radius: 3px;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+      ),
+      #090a0b;
+    transition: all 0.2s ease-in-out;
+  }
+  &:disabled {
+    border-radius: 3px;
+    background: rgba(9, 10, 11, 0.3);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.text_only_secondary_btn {
+  @extend %button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background: var(--color-fill-3, #e6e7eb);
+  color: var(--color-text-1, #090a0b);
+  padding: 8px;
+
+  &.basic_s {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+    padding: 4px 12px;
+  }
+
+  &.basic_m {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 6px 16px;
+  }
+
+  &.basic_icon_m {
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 6px 10px;
+  }
+
+  &.basic_l {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 10px 24px;
+  }
+
+  &.basic_icon_l {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 10px 10px;
+  }
+
+  &.basic_xl {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 12px 32px;
+  }
+
+  &:hover {
+    border-radius: 3px;
+    background: linear-gradient(
+        0deg,
+        rgba(9, 10, 11, 0.1) 0%,
+        rgba(9, 10, 11, 0.1) 100%
+      ),
+      #e6e7eb;
+    transition: all 0.2s ease-in-out;
+  }
+  &:active {
+    border-radius: 3px;
+    background: linear-gradient(
+        0deg,
+        rgba(9, 10, 11, 0.2) 0%,
+        rgba(9, 10, 11, 0.2) 100%
+      ),
+      #e6e7eb;
+    transition: all 0.2s ease-in-out;
+  }
+  &:disabled {
+    border-radius: 3px;
+    background: rgba(230, 231, 235, 0.5);
+    color: rgba(9, 10, 11, 0.4);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.primary_rounded_btn {
+  @extend %button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: var(--blue-50, #0d6dff);
+  color: var(--color-text-5, #fff);
+  padding: 8px;
+
+  &.basic_s {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+    padding: 4px 12px;
+  }
+
+  &.basic_m {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 6px 16px;
+  }
+
+  &.basic_l {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 10px 24px;
+  }
+
+  &.basic_xl {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 12px 32px;
+  }
+
+  &:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      ),
+      #0d6dff;
+    transition: all 0.2s ease-in-out;
+  }
+  &:active {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.2) 100%
+      ),
+      #0d6dff;
+    transition: all 0.2s ease-in-out;
+  }
+  &:disabled {
+    background: rgba(13, 109, 255, 0.3);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.secondary_rounded_btn {
+  @extend %button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: #e6e7eb;
+  color: #090a0b;
+  padding: 8px;
+  flex-shrink: 1;
+
+  &.basic_s {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.3px;
+    padding: 4px 12px;
+  }
+
+  &.basic_m {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 6px 16px;
+  }
+
+  &.basic_l {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    padding: 10px 24px;
+  }
+
+  &.basic_xl {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 12px 32px;
+  }
+
+  &:hover {
+    border-radius: 100px;
+    background: linear-gradient(
+        0deg,
+        rgba(9, 10, 11, 0.1) 0%,
+        rgba(9, 10, 11, 0.1) 100%
+      ),
+      #e6e7eb;
+    transition: all 0.2s ease-in-out;
+  }
+  &:active {
+    border-radius: 100px;
+    background: linear-gradient(
+        0deg,
+        rgba(9, 10, 11, 0.2) 0%,
+        rgba(9, 10, 11, 0.2) 100%
+      ),
+      #e6e7eb;
+    transition: all 0.2s ease-in-out;
+  }
+  &:disabled {
+    border-radius: 100px;
+    background: rgba(230, 231, 235, 0.5);
+    color: rgba(9, 10, 11, 0.4);
+    transition: all 0.2s ease-in-out;
+  }
+}

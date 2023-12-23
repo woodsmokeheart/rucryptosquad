@@ -3,9 +3,12 @@ import React, { useCallback, useEffect, useState } from "react";
 import LinkButton from "../LinkButton/LinkButton";
 import Background from "../Background/Background";
 import Title from "@/components/Title/Title";
+import PlayButton from "@/components/elements/PlayButton/PlayButton";
 
 const HomePageDesktop = () => {
   const [appear, setAppear] = useState(false);
+  const [audio] = useState(new Audio("/sakura.mp3"));
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const showButtonsTimeoutFn = useCallback(() => {
     setAppear(true);
@@ -15,6 +18,15 @@ const HomePageDesktop = () => {
 
     return () => clearTimeout(timeout);
   }, []);
+
+  const toggleAudio = () => {
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   useEffect(() => {
     showButtonsTimeoutFn();
@@ -58,7 +70,11 @@ const HomePageDesktop = () => {
         position="team_position"
         appear={appear}
       />
-      <Title title="Raider Street" />
+
+      <div className="absolute bottom-0 z-10 padding-40-50 w-100 d-flex align-center justify-between">
+        <Title title="Raider Street" />
+        <PlayButton onClick={toggleAudio} isPlaying={isPlaying} />
+      </div>
       <Background onClick={showButtonsTimeoutFn} />
     </React.Fragment>
   );
