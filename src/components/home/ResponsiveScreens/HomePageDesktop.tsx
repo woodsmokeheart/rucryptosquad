@@ -7,7 +7,7 @@ import PlayButton from "@/components/elements/PlayButton/PlayButton";
 
 const HomePageDesktop = () => {
   const [appear, setAppear] = useState(false);
-  const [audio] = useState(new Audio("/sakura.mp3"));
+  const [audio] = useState(new Audio("/GorkyParkBang.mp3"));
   const [isPlaying, setIsPlaying] = useState(false);
 
   const showButtonsTimeoutFn = useCallback(() => {
