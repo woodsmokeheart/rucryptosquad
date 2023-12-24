@@ -20,19 +20,19 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   const tooltipContent = useMemo(() => {
     switch (classNames) {
       case "about":
-        return "About";
+        return "Пора нам познакомиться поближе. Узнай все о DAO RCS.";
       case "contacts":
-        return "Contacts";
+        return "Есть вопросы? Мы ответим!";
       case "gallery":
-        return "Gallery";
+        return "Посмотри нашими глазами на Эфирион";
       case "lore":
-        return "Lore";
+        return "Окунись в удивительный мир Эфириона!";
       case "ranks":
-        return "Ranks";
+        return "В Эфирионе каждый получает по заслугам. Ранги";
       case "team":
-        return "Team";
+        return "Познакомься с создателями. Команда";
       default:
-        return "Custom Tooltip Content";
+        return "Эфирион";
     }
   }, [classNames]);
 

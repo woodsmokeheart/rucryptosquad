@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import HomePageSetting from "@/pages/HomePageSetting";
 import dynamic from "next/dynamic";
 import Loader from "@/components/Loader/Loader";
+import Cursor from "@/components/elements/Cursor/Cursor";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(
@@ -25,7 +26,10 @@ function Home() {
       {isLoading ? (
         <Loader title="Welcome to Ethereon" glitch="Welcome to Ethereon" />
       ) : (
-        <HomePageSetting />
+        <>
+          <Cursor />
+          <HomePageSetting />
+        </>
       )}
     </>
   );

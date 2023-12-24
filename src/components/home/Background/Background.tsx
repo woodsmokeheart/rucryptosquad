@@ -5,19 +5,10 @@ import background from "../../../assets/img/sity.png";
 
 interface BackgroundProps {
   src?: JSX.Element;
-  onClick?: () => void;
 }
 
-const Background: React.FC<BackgroundProps> = ({ src, onClick }) => {
-  return (
-    <Image
-      src={background}
-      alt="hero"
-      fill={true}
-      onClick={onClick}
-      loading="eager"
-    />
-  );
+const Background: React.FC<BackgroundProps> = ({ src }) => {
+  return <Image src={background} alt="hero" fill={true} loading="eager" />;
 };
 
 export default Background;

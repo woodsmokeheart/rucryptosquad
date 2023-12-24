@@ -4,6 +4,8 @@ import LinkButton from "../LinkButton/LinkButton";
 import Background from "../Background/Background";
 import Title from "@/components/Title/Title";
 import PlayButton from "@/components/elements/PlayButton/PlayButton";
+import Water from "@/components/Water/Water";
+import Footer from "../Footer/Footer";
 
 const HomePageDesktop = () => {
   const [appear, setAppear] = useState(false);
@@ -71,11 +73,13 @@ const HomePageDesktop = () => {
         appear={appear}
       />
 
-      <div className="absolute bottom-0 z-10 padding-40-50 w-100 d-flex align-center justify-between">
-        <Title title="Raider Street" />
-        <PlayButton onClick={toggleAudio} isPlaying={isPlaying} />
-      </div>
-      <Background onClick={showButtonsTimeoutFn} />
+      <Footer
+        title="Raider Street"
+        toggleAudio={toggleAudio}
+        isPlaying={isPlaying}
+      />
+      <Water onClick={showButtonsTimeoutFn} />
+      <Background />
     </React.Fragment>
   );
 };
