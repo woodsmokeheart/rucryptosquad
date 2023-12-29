@@ -2,18 +2,21 @@ import React, { useCallback, useEffect, useState } from "react";
 
 import LinkButton from "../LinkButton/LinkButton";
 import Background from "../Background/Background";
-import Title from "@/components/Title/Title";
-import PlayButton from "@/components/elements/PlayButton/PlayButton";
 import Water from "@/components/Water/Water";
 import Footer from "../Footer/Footer";
 
 const HomePageDesktop = () => {
   const [appear, setAppear] = useState(false);
-  const [audio] = useState(new Audio("/GorkyParkBang.mp3"));
+  const [audio] = useState(new Audio("/shum_goroda_posle_dojdya.mp3"));
   const [isPlaying, setIsPlaying] = useState(false);
 
   const showButtonsTimeoutFn = useCallback(() => {
     setAppear(true);
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play();
+    }
     const timeout = setTimeout(() => {
       setAppear(false);
     }, 3000);
@@ -78,7 +81,13 @@ const HomePageDesktop = () => {
         toggleAudio={toggleAudio}
         isPlaying={isPlaying}
       />
-      <Water onClick={showButtonsTimeoutFn} />
+      <Water
+        onClick={() => {
+          showButtonsTimeoutFn();
+          audio.play();
+          setIsPlaying(true);
+        }}
+      />
       <Background />
     </React.Fragment>
   );
