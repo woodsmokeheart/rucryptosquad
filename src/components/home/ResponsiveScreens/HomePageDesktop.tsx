@@ -12,11 +12,6 @@ const HomePageDesktop = () => {
 
   const showButtonsTimeoutFn = useCallback(() => {
     setAppear(true);
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.play();
-    }
     const timeout = setTimeout(() => {
       setAppear(false);
     }, 3000);
