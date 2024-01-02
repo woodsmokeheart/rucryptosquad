@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import NavigationButtonBlock from "../NavigationButtonBlock/NavigationButtonBlock";
 
 const HomePageMobile = () => {
   return (
-    <div>HomePageMobile</div>
-  )
-}
+    <div>
+      <NavigationButtonBlock />
+    </div>
+  );
+};
 
-export default HomePageMobile
+export default HomePageMobile;
