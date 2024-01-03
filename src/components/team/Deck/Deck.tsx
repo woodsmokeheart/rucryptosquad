@@ -59,6 +59,7 @@ const Deck = () => {
   );
   return (
     <div className={styles.container}>
+      <div className={styles.title}>Our Team</div>
       {props.map(({ x, y, rot, scale }, i) => (
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
           <animated.div
