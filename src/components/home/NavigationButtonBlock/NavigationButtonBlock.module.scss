@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .button_container {
@@ -21,6 +22,10 @@
 
   opacity: 0;
   animation: fadeInUp 0.5s ease-in-out forwards;
+
+  &:not(:last-child){
+    margin-bottom: 10px;
+  }
 
   &:nth-child(1) {
     animation-delay: 0.4s;
