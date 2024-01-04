@@ -1,10 +1,11 @@
+"use client";
+import AboutUsPageSetting from "@/pages/AboutUsPageSetting";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
 function AboutUs() {
   return (
     <main>
-      <Link href="/">Home</Link>
+      <AboutUsPageSetting />
     </main>
   );
 }

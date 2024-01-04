@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import TypedText from "../TypedText/TypedText";
 
 const AboutUsPageMobile = () => {
   return (
-    <div>AboutUsPageMobile</div>
-  )
-}
+    <div>
+      <TypedText />
+    </div>
+  );
+};
 
-export default AboutUsPageMobile
+export default AboutUsPageMobile;
