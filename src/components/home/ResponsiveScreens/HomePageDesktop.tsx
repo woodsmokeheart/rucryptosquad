@@ -4,6 +4,7 @@ import LinkButton from "../LinkButton/LinkButton";
 import Background from "../Background/Background";
 import Water from "@/components/Water/Water";
 import Footer from "../Footer/Footer";
+import Header from "@/components/Header/Header";
 
 const HomePageDesktop = () => {
   const [appear, setAppear] = useState(false);
@@ -32,10 +33,9 @@ const HomePageDesktop = () => {
     showButtonsTimeoutFn();
   }, [showButtonsTimeoutFn]);
 
-
-
   return (
     <React.Fragment>
+      <Header />
       <LinkButton
         link="/about_us"
         classNames="about"
