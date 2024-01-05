@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import cn from "classnames";
@@ -36,8 +36,38 @@ const LinkButton: React.FC<LinkButtonProps> = ({
     }
   }, [classNames]);
 
+  const [audio] = useState(new Audio("/korotkiy.mp3"));
+
+  const playAudio = () => {
+    audio.play();
+  };
+
+  const stopAudio = () => {
+    audio.pause();
+    audio.currentTime = 0;
+  };
+
+  const handleMouseEnter = () => {
+    playAudio();
+  };
+
+  const handleMouseLeave = () => {
+    stopAudio();
+  };
+
+  useEffect(() => {
+    audio.addEventListener("ended", stopAudio);
+    return () => {
+      audio.removeEventListener("ended", stopAudio);
+    };
+  }, []);
+
   return (
-    <Link href={link}>
+    <Link
+      href={link}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className={styles[position]}>
         <div
           className={cn("button", styles[classNames], appear && styles.appear)}
