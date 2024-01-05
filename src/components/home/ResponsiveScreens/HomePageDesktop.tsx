@@ -1,15 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
-
 import LinkButton from "../LinkButton/LinkButton";
 import Background from "../Background/Background";
 import Water from "@/components/Water/Water";
 import Footer from "../Footer/Footer";
 import Header from "@/components/Header/Header";
+import Loader from "@/components/Loader/Loader";
 
 const HomePageDesktop = () => {
+  const [isLoading, setIsLoading] = useState(
+    !sessionStorage.getItem("visited")
+  );
+
   const [appear, setAppear] = useState(false);
-  const [audio] = useState(new Audio("/shum_goroda_posle_dojdya.mp3"));
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const showButtonsTimeoutFn = useCallback(() => {
     setAppear(true);
@@ -20,70 +22,71 @@ const HomePageDesktop = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const toggleAudio = () => {
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
   useEffect(() => {
     showButtonsTimeoutFn();
   }, [showButtonsTimeoutFn]);
 
+  const handleLoaderClose = () => {
+    setIsLoading(false);
+    sessionStorage.setItem("visited", "true");
+  };
+
   return (
     <React.Fragment>
-      <Header />
-      <LinkButton
-        link="/about_us"
-        classNames="about"
-        position="about_position"
-        appear={appear}
-      />
-      <LinkButton
-        link="/contacts"
-        classNames="contacts"
-        position="contacts_position"
-        appear={appear}
-      />
-      <LinkButton
-        link="/gallery"
-        classNames="gallery"
-        position="gallery_position"
-        appear={appear}
-      />
-      <LinkButton
-        link="/lore"
-        classNames="lore"
-        position="lore_position"
-        appear={appear}
-      />
-      <LinkButton
-        link="/ranks"
-        classNames="ranks"
-        position="ranks_position"
-        appear={appear}
-      />
-      <LinkButton
-        link="/team"
-        classNames="team"
-        position="team_position"
-        appear={appear}
-      />
-
-      <Footer
-        title="Raider Street"
-        toggleAudio={toggleAudio}
-        isPlaying={isPlaying}
-      />
-      <Water
-        onClick={() => {
-          showButtonsTimeoutFn();
-        }}
-      />
-      <Background />
+      {isLoading ? (
+        <Loader
+          title="Welcome to Ethereon"
+          glitch="Welcome to Ethereon"
+          onClose={handleLoaderClose}
+        />
+      ) : (
+        <>
+          <Header />
+          <LinkButton
+            link="/about_us"
+            classNames="about"
+            position="about_position"
+            appear={appear}
+          />
+          <LinkButton
+            link="/contacts"
+            classNames="contacts"
+            position="contacts_position"
+            appear={appear}
+          />
+          <LinkButton
+            link="/gallery"
+            classNames="gallery"
+            position="gallery_position"
+            appear={appear}
+          />
+          <LinkButton
+            link="/lore"
+            classNames="lore"
+            position="lore_position"
+            appear={appear}
+          />
+          <LinkButton
+            link="/ranks"
+            classNames="ranks"
+            position="ranks_position"
+            appear={appear}
+          />
+          <LinkButton
+            link="/team"
+            classNames="team"
+            position="team_position"
+            appear={appear}
+          />
+          <Footer title="Raider Street" />
+          <Water
+            onClick={() => {
+              showButtonsTimeoutFn();
+            }}
+          />
+          <Background />
+        </>
+      )}
     </React.Fragment>
   );
 };

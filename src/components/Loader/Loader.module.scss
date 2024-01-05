@@ -1,12 +1,31 @@
 .loader {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: black;
   font-family: arial;
   text-align: center;
 }
+
+.buttonClose {
+  margin-top: 40px;
+  text-transform: uppercase;
+  background-color: #5c124f;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+    color: #5c124f;
+  }
+}
+
 .glitch {
   position: relative;
   font-size: 50px;
