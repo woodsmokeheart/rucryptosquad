@@ -108,13 +108,10 @@ const WhitePaper = () => {
         (Negotiations in progress)
       </p>
       <p>
-        9.Creating a game-based educational application aimed at childrens
-        education and based on the world of Ethereum.
-      </p>
-      <p>
         8.Creating a game-based educational application aimed at childrens
         education and based on the world of Ethereum.
       </p>
+      <p>9.Launching your own coin on the TON blockchain.</p>
     </div>
   );
 };
