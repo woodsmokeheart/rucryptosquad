@@ -32,6 +32,7 @@
   &:hover {
     .tooltip {
       display: block;
+      text-align: center;
       animation: slideTop 0.5s ease forwards;
     }
   }

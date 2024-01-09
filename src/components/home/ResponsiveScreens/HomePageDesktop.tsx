@@ -66,7 +66,7 @@ const HomePageDesktop = () => {
             position="ranks_position"
             appear={appear}
           />
-          <Footer title="Raider Street" />
+          <Footer title="The world of Ethereum" />
           <Water
             onClick={() => {
               showButtonsTimeoutFn();

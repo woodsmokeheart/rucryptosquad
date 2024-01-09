@@ -1,8 +1,7 @@
 import React from "react";
-import Deck from "../Deck/Deck";
 
 const TeamPageMobile = () => {
-  return <Deck />;
+  return <div>TeamPageMobile</div>;
 };
 
 export default TeamPageMobile;
