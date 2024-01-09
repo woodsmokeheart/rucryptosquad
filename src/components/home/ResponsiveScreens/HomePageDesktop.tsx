@@ -49,12 +49,6 @@ const HomePageDesktop = () => {
             appear={appear}
           />
           <LinkButton
-            link="/contacts"
-            classNames="contacts"
-            position="contacts_position"
-            appear={appear}
-          />
-          <LinkButton
             link="/gallery"
             classNames="gallery"
             position="gallery_position"
@@ -70,12 +64,6 @@ const HomePageDesktop = () => {
             link="/ranks"
             classNames="ranks"
             position="ranks_position"
-            appear={appear}
-          />
-          <LinkButton
-            link="/team"
-            classNames="team"
-            position="team_position"
             appear={appear}
           />
           <Footer title="Raider Street" />

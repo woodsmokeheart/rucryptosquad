@@ -44,7 +44,6 @@ const Card: React.FC<ICardProps> = ({
         style={background}
       >
         <div className={styles.row}>
-          <div className={styles.icon}>{icon}</div>
           <div className={styles.description}>
             <h4>{title}</h4>
             <p>{description}</p>

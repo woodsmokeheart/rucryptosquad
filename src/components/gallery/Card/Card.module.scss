@@ -10,6 +10,7 @@ $card-margin: 10px;
   border-radius: 2rem;
   margin: 0 10px;
   display: flex;
+  justify-content: center;
   align-items: flex-end;
   transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
   box-shadow: 0px 10px 30px -5px rgba(255, 255, 255, 0.8);
@@ -17,33 +18,25 @@ $card-margin: 10px;
     color: white;
     display: flex;
     flex-wrap: nowrap;
-    & > .icon {
-      background: #223;
-      color: white;
-      border-radius: 50%;
-      width: 50px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 15px;
-    }
     & > .description {
       display: flex;
       justify-content: center;
       flex-direction: column;
       overflow: hidden;
-      height: 80px;
-      width: 520px;
+      width: 420px;
       opacity: 0;
       transform: translateY(30px);
       transition-delay: 0.3s;
       transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px black;
+      margin-bottom: 20px;
       p {
-        color: #b0b0ba;
+        color: #fff;
         padding-top: 5px;
       }
       h4 {
         text-transform: uppercase;
+        text-shadow: 1px 1px 2px black;
       }
     }
   }
@@ -52,7 +45,7 @@ $card-margin: 10px;
 .input {
   display: none;
   &:checked + .label {
-    width: 600px;
+    width: 500px;
     & .description {
       opacity: 1 !important;
       transform: translateY(0) !important;

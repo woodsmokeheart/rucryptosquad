@@ -52,15 +52,6 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/team"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              Team
-            </Link>
-          </li>
-          <li>
-            <Link
               href="/gallery"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
