@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.scss";
-import { useEffect, useState } from "react";
 
 const Header = () => {
   const [audio] = useState(new Audio("/korotkiy.mp3"));
@@ -84,15 +84,6 @@ const Header = () => {
               onMouseLeave={handleMouseLeave}
             >
               Ranks
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contacts"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              Contacts
             </Link>
           </li>
         </ul>

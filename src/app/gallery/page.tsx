@@ -1,10 +1,11 @@
+"use client";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+import GalleryPageSetting from "@/pages/GalleryPageSetting";
 
 function Gallery() {
   return (
     <main>
-      <Link href="/">Home</Link>
+      <GalleryPageSetting />
     </main>
   );
 }
