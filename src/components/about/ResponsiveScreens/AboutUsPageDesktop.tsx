@@ -2,17 +2,16 @@ import React from "react";
 import TypedText from "../TypedText/TypedText";
 import Header from "@/components/Header/Header";
 import Tabs from "../../Tabs/Tabs";
-import ScrollCards from "@/components/gallery/ScrollCards/ScrollCards";
+import ScrollCards from "@/components/about/ScrollCards/ScrollCards";
 import Image from "next/image";
 import background from "../../../assets/img/team_background.png";
-
-
+import WhitePaper from "../WhitePaper/WhitePaper";
 
 const manifestContent = <TypedText />;
-const whitepaperContent = <p>Содержимое вкладки Whitepaper</p>;
+const whitepaperContent = <WhitePaper />;
 const teamContent = (
   <div style={{ width: "100%", textAlign: "center" }}>
-    <h1 style={{marginBottom:'50px'}}>Our Team</h1>
+    <h1 style={{ marginBottom: "50px" }}>Our Team</h1>
     <ScrollCards />
   </div>
 );

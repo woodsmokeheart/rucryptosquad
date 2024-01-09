@@ -4,7 +4,6 @@ import styles from "./Card.module.scss";
 
 interface ICard {
   id: string;
-  icon: string;
   title: string;
   description: string;
   url?: string;
@@ -17,7 +16,6 @@ interface ICardProps extends ICard {
 const Card: React.FC<ICardProps> = ({
   id,
   url,
-  icon,
   title,
   description,
   defaultChecked,
