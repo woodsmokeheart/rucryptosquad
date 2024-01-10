@@ -40,14 +40,14 @@
 
 .about_position {
   @extend %tooltip;
-  top: 50%;
-  left: 19%;
+  top: 35%;
+  left: 17%;
   transform: translate(-50%, -50%);
 }
 .gallery_position {
   @extend %tooltip;
-  top: 24%;
-  left: 32%;
+  top: 44%;
+  left: 29%;
   transform: translate(-25%, -25%);
 }
 .contacts_position {
@@ -59,13 +59,13 @@
 .lore_position {
   @extend %tooltip;
   top: 47%;
-  right: 33%;
+  right: 24%;
   transform: translate(-25%, -25%);
 }
 .ranks_position {
   @extend %tooltip;
-  top: 83%;
-  right: 31%;
+  top: 43%;
+  right: 6%;
   transform: translate(-75%, -75%);
 }
 .team_position {

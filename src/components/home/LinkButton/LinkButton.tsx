@@ -22,13 +22,13 @@ const LinkButton: React.FC<LinkButtonProps> = ({
       case "about":
         return "Welcome to Ethereum! Find out all about our DAO.";
       case "gallery":
-        return "Посмотри нашими глазами на Эфирион";
+        return "A gallery of our best moments.";
       case "lore":
-        return "Окунись в удивительный мир Эфириона!";
+        return "Find out the history of Ethereum.";
       case "ranks":
-        return "В Эфирионе каждый получает по заслугам. Ранги";
+        return "The ranking system in the community.";
       default:
-        return "Эфирион";
+        return "Ethereum";
     }
   }, [classNames]);
 
