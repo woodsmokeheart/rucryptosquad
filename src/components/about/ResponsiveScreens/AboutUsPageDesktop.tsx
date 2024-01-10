@@ -17,7 +17,7 @@ const teamContent = (
 );
 
 const tabs = [
-  { label: "Manifest", content: manifestContent },
+  { label: "DAO", content: manifestContent },
   { label: "Whitepaper", content: whitepaperContent },
   { label: "Team", content: teamContent },
 ];
