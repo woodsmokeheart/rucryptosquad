@@ -25,6 +25,7 @@ const tabs = [
 export const AboutUsPageDesktop = () => {
   return (
     <div className="d-flex justify-center">
+      <title>About us</title>
       <Header />
       <Tabs tabs={tabs} />
       <Image src={background} alt="hero" fill={true} loading="eager" />

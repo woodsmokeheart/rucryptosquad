@@ -33,6 +33,7 @@ const HomePageDesktop = () => {
 
   return (
     <React.Fragment>
+      <title>Home</title>
       {isLoading ? (
         <Loader
           title="Welcome to Ethereon"
