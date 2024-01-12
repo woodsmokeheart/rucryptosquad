@@ -1,7 +1,11 @@
 import Title from "@/components/Title/Title";
-import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { Vkontakte } from "@/assets/svg/vkontakte";
+import { Telegram } from "@/assets/svg/telegram";
+import { Twitter } from "@/assets/svg/twitter";
+import { Rarible } from "@/assets/svg/rarible";
+import styles from "./Footer.module.scss";
 
 interface FooterProps {
   title: string;
@@ -9,36 +13,28 @@ interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({ title }) => {
   return (
-    <div className="absolute bottom-0 z-2 padding-40-50 w-100 d-flex align-center justify-between">
+    <div className={styles.wrapper}>
       <Title title={title} />
-      <div className="d-flex">
-        <Link target="_blank" href="https://twitter.com/RuCryptoSquad">
-          <Image
-            width="48"
-            height="48"
-            src="https://img.icons8.com/color/48/twitter-circled.png"
-            alt="twitter-circled"
-          />
+      <div className={styles.link_container}>
+        <Link target="_blank" href="https://vk.com/rucryptosquad">
+          <Vkontakte />
+        </Link>
+        <Link target="_blank" href="https://t.me/daorcs" className="ml-4">
+          <Telegram />
         </Link>
         <Link
           target="_blank"
-          href="https://vk.com/rucryptosquad"
+          href="https://twitter.com/RuCryptoSquad"
           className="ml-4"
         >
-          <Image
-            width="48"
-            height="48"
-            src="https://img.icons8.com/color/48/vk-circled--v1.png"
-            alt="vk-circled--v1"
-          />
+          <Twitter />
         </Link>
-        <Link target="_blank" href="https://t.me/daorcs" className="ml-4">
-          <Image
-            width="48"
-            height="48"
-            src="https://img.icons8.com/color/48/telegram-app--v1.png"
-            alt="telegram-app--v1"
-          />
+        <Link
+          target="_blank"
+          href="https://rarible.com/RuCryptoSquad"
+          className="ml-4"
+        >
+          <Rarible />
         </Link>
       </div>
     </div>

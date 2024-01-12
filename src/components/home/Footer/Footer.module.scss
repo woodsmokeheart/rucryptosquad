@@ -1,0 +1,30 @@
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  padding: 40px 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link_container {
+  display: flex;
+  align-items: center;
+  > a:not(:first-child) {
+    margin-left: 10px;
+  }
+  > a {
+    background-color: #fff;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
