@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useRef, ReactElement } from "react";
 import styles from "./SliderGallery.module.scss";
-import { Carousel } from "react-carousel3";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "./swiper.scss";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 import img1 from "../../../assets/img/gallery/1.jpg";
 import img2 from "../../../assets/img/gallery/2.jpg";
 import img3 from "../../../assets/img/gallery/3.jpg";
@@ -16,59 +25,73 @@ import img11 from "../../../assets/img/gallery/11.jpg";
 import img12 from "../../../assets/img/gallery/12.jpg";
 import img13 from "../../../assets/img/gallery/13.jpg";
 
-const SliderGallery = () => {
+interface SliderGalleryProps {}
+
+interface ImageProps {
+  src: StaticImageData;
+  alt: string;
+}
+
+const SliderGallery: React.FC<SliderGalleryProps> = () => {
+  const progressCircle = useRef<SVGSVGElement>(null!);
+  const progressContent = useRef<HTMLSpanElement>(null!);
+
+  const onAutoplayTimeLeft = (s: any, time: number, progress: number): void => {
+    progressCircle.current.style.setProperty(
+      "--progress",
+      String(1 - progress)
+    );
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
+  const images: ImageProps[] = [
+    { src: img1, alt: "Image 1" },
+    { src: img2, alt: "Image 2" },
+    { src: img3, alt: "Image 3" },
+    { src: img4, alt: "Image 4" },
+    { src: img5, alt: "Image 5" },
+    { src: img6, alt: "Image 6" },
+    { src: img7, alt: "Image 7" },
+    { src: img8, alt: "Image 8" },
+    { src: img9, alt: "Image 9" },
+    { src: img10, alt: "Image 10" },
+    { src: img11, alt: "Image 11" },
+    { src: img12, alt: "Image 12" },
+    { src: img13, alt: "Image 13" },
+  ];
+
   return (
-    <React.Fragment>
+    <>
       <div className={styles.carousel}>
-        <Carousel
-          height={560}
-          width={1040}
-          yOrigin={42}
-          yRadius={78}
-          autoPlay={true}
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          onAutoplayTimeLeft={onAutoplayTimeLeft}
+          className="mySwiper"
         >
-          <div key={1} className={styles.image_container}>
-            <Image alt="img" src={img5} fill={true} loading="eager" />
+          {images.map((image, index) => (
+            <SwiperSlide key={index}>
+              <Image src={image.src} alt={image.alt} />
+            </SwiperSlide>
+          ))}
+          <div className="autoplay-progress" slot="container-end">
+            <svg viewBox="0 0 48 48" ref={progressCircle}>
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref={progressContent}></span>
           </div>
-          <div key={2} className={styles.image_container}>
-            <Image alt="img" src={img2} fill={true} loading="eager" />
-          </div>
-          <div key={3} className={styles.image_container}>
-            <Image alt="img" src={img3} fill={true} loading="eager" />
-          </div>
-          <div key={4} className={styles.image_container}>
-            <Image alt="img" src={img4} fill={true} loading="eager" />
-          </div>
-          <div key={5} className={styles.image_container}>
-            <Image alt="img" src={img1} fill={true} loading="eager" />
-          </div>
-          <div key={6} className={styles.image_container}>
-            <Image alt="img" src={img6} fill={true} loading="eager" />
-          </div>
-          <div key={7} className={styles.image_container}>
-            <Image alt="img" src={img7} fill={true} loading="eager" />
-          </div>
-          <div key={8} className={styles.image_container}>
-            <Image alt="img" src={img8} fill={true} loading="eager" />
-          </div>
-          <div key={9} className={styles.image_container}>
-            <Image alt="img" src={img9} fill={true} loading="eager" />
-          </div>
-          <div key={10} className={styles.image_container}>
-            <Image alt="img" src={img10} fill={true} loading="eager" />
-          </div>
-          <div key={11} className={styles.image_container}>
-            <Image alt="img" src={img11} fill={true} loading="eager" />
-          </div>
-          <div key={12} className={styles.image_container}>
-            <Image alt="img" src={img12} fill={true} loading="eager" />
-          </div>
-          <div key={13} className={styles.image_container}>
-            <Image alt="img" src={img13} fill={true} loading="eager" />
-          </div>
-        </Carousel>
+        </Swiper>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
