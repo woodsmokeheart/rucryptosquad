@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import img1 from "../../../assets/img/gallery/1.jpg";
 import img2 from "../../../assets/img/gallery/2.jpg";
-// import img3 from "../../../assets/img/gallery/3.jpg";
+import img3 from "../../../assets/img/gallery/3.jpg";
 import img4 from "../../../assets/img/gallery/4.jpg";
 import img5 from "../../../assets/img/gallery/5.jpg";
 import img6 from "../../../assets/img/gallery/6.jpg";
@@ -24,6 +24,7 @@ import img10 from "../../../assets/img/gallery/10.jpg";
 import img11 from "../../../assets/img/gallery/11.jpg";
 import img12 from "../../../assets/img/gallery/12.jpg";
 import img13 from "../../../assets/img/gallery/13.jpg";
+import img14 from "../../../assets/img/gallery/14.jpg";
 
 interface SliderGalleryProps {}
 
@@ -47,7 +48,7 @@ const SliderGallery: React.FC<SliderGalleryProps> = () => {
   const images: ImageProps[] = [
     { src: img1, alt: "Image 1" },
     { src: img2, alt: "Image 2" },
-    // { src: img3, alt: "Image 3" },
+    { src: img3, alt: "Image 3" },
     { src: img4, alt: "Image 4" },
     { src: img5, alt: "Image 5" },
     { src: img6, alt: "Image 6" },
@@ -58,6 +59,7 @@ const SliderGallery: React.FC<SliderGalleryProps> = () => {
     { src: img11, alt: "Image 11" },
     { src: img12, alt: "Image 12" },
     { src: img13, alt: "Image 13" },
+    { src: img14, alt: "Image 14" },
   ];
 
   return (
