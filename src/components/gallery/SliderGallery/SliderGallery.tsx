@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import img1 from "../../../assets/img/gallery/1.jpg";
 import img2 from "../../../assets/img/gallery/2.jpg";
-import img3 from "../../../assets/img/gallery/3.jpg";
+// import img3 from "../../../assets/img/gallery/3.jpg";
 import img4 from "../../../assets/img/gallery/4.jpg";
 import img5 from "../../../assets/img/gallery/5.jpg";
 import img6 from "../../../assets/img/gallery/6.jpg";
@@ -47,7 +47,7 @@ const SliderGallery: React.FC<SliderGalleryProps> = () => {
   const images: ImageProps[] = [
     { src: img1, alt: "Image 1" },
     { src: img2, alt: "Image 2" },
-    { src: img3, alt: "Image 3" },
+    // { src: img3, alt: "Image 3" },
     { src: img4, alt: "Image 4" },
     { src: img5, alt: "Image 5" },
     { src: img6, alt: "Image 6" },
