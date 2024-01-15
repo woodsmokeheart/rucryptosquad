@@ -1,10 +1,11 @@
+"use client";
+import RanksPageSetting from "@/pages/RanksPageSetting";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
 function Ranks() {
   return (
     <main>
-      <Link href="/">Home</Link>
+      <RanksPageSetting />
     </main>
   );
 }
