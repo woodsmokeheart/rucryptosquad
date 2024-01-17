@@ -13,7 +13,7 @@ interface ResizeResult {
 export const SCREEN_SM: number = 576;
 export const SCREEN_MD: number = 768;
 export const SCREEN_LG: number = 992;
-export const SCREEN_XL: number = 1200;
+export const SCREEN_XL: number = 1024;
 export const SCREEN_XXL: number = 1400;
 
 const useResize = (): ResizeResult => {
