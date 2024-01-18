@@ -60,7 +60,7 @@
 
 .info {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px;
   right: 130px;
   display: flex;
   flex-direction: column;
@@ -85,7 +85,39 @@
     background-color: white;
     color: black;
     -webkit-box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
+  }
+}
+
+.description_rank {
+  position: relative;
+  overflow: hidden;
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+}
+
+.button_hide {
+  width: 95%;
+  background-color: black;
+  padding: 16px 0;
+  margin: 0 10px;
+  border-radius: 14px;
+  position: absolute;
+  bottom: 10px;
+  right: 1px;
+  font-size: 14px;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
   -moz-box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
   box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: white;
+    color: black;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(163, 163, 163, 0.2);
   }
 }
