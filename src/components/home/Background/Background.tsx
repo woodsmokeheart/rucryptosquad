@@ -8,7 +8,7 @@ interface BackgroundProps {
 }
 
 const Background: React.FC<BackgroundProps> = ({ src }) => {
-  return <Image src={background} alt="hero" fill={true} loading="eager" />;
+  return <Image src={background} alt="hero" fill={true} priority />;
 };
 
 export default Background;

@@ -7,7 +7,7 @@ const TeamPageDesktop = () => {
   return (
     <>
       <Header />
-      <Image src={background} alt="hero" fill={true} loading="eager" />
+      <Image src={background} alt="hero" fill={true} priority />
     </>
   );
 };

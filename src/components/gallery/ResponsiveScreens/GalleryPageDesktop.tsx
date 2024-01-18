@@ -10,7 +10,7 @@ const GalleryPageDesktop: React.FC = () => {
       <title>Gallery</title>
       <Header />
       <SliderGallery />
-      <Image src={background} alt="hero" fill={true} loading="eager" />
+      <Image src={background} alt="hero" fill={true} priority />
     </div>
   );
 };

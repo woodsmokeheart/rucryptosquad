@@ -39,10 +39,18 @@ function Card({ src, title }: { src: StaticImageData; title: string }) {
   return (
     <div className={styles.cardRank}>
       <div className={styles.image}>
-        <Image src={src} alt="rank" fill={true} loading="eager" />
+        <Image
+          src={src}
+          alt="rank"
+          width={500}
+          sizes="100%"
+          className={styles.image}
+        />
       </div>
-      <h2>{`Rank: ${title}`}</h2>
-      <button className={styles.button_more}>Read more</button>
+      <div className={styles.info}>
+        <h2>{`Rank: ${title}`}</h2>
+        <button className={styles.button_more}>Read more</button>
+      </div>
     </div>
   );
 }

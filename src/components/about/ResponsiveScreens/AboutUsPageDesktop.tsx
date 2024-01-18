@@ -28,7 +28,7 @@ export const AboutUsPageDesktop = () => {
       <title>About us</title>
       <Header />
       <Tabs tabs={tabs} />
-      <Image src={background} alt="hero" fill={true} loading="eager" />
+      <Image src={background} alt="hero" fill={true} priority />
     </div>
   );
 };

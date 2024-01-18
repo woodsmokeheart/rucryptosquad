@@ -9,7 +9,13 @@ const RanksPageDesktop = () => {
     <div className="d-flex justify-center align-center">
       <Header />
       <RanksContent />
-      <Image src={background} alt="hero" fill={true} loading="eager" />
+      <Image
+        src={background}
+        alt="hero"
+        fill={true}
+        priority
+        placeholder="blur"
+      />
     </div>
   );
 };
