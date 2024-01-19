@@ -28,7 +28,7 @@ const Tabs: React.FC<{ tabs: TabProps[] }> = ({ tabs }) => {
           </div>
         ))}
       </div>
-      <div>{tabs[activeTabIndex].content}</div>
+      <div className={styles.content}>{tabs[activeTabIndex].content}</div>
     </div>
   );
 };

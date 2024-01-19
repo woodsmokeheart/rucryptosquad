@@ -25,7 +25,7 @@ $card-margin: 10px;
       justify-content: center;
       flex-direction: column;
       overflow: hidden;
-      width: 420px;
+      width: 350px;
       opacity: 0;
       transform: translateY(30px);
       transition-delay: 0.3s;
@@ -47,7 +47,7 @@ $card-margin: 10px;
 .input {
   display: none;
   &:checked + .label {
-    width: 500px;
+    width: 400px;
     & .description {
       opacity: 1 !important;
       transform: translateY(0) !important;
