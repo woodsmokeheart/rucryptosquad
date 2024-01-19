@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import styles from "./RanksContent.module.scss";
 import Image, { StaticImageData } from "next/image";
 import resident from "../../../assets/img/img_ranks/resident.png";
@@ -58,6 +58,51 @@ function Card({
   description: ReactNode;
 }) {
   const [isDescription, setIsDescription] = useState(false);
+  const [audioOpen] = useState(new Audio("/open_journal.mp3"));
+  const [audioClose] = useState(new Audio("/tp.mp3"));
+
+  const playAudioOpen = () => {
+    audioOpen.play();
+  };
+  const playAudioClose = () => {
+    audioClose.play();
+  };
+
+  const stopAudioOpen = () => {
+    audioOpen.pause();
+    audioOpen.currentTime = 0;
+  };
+  const stopAudioClose = () => {
+    audioClose.pause();
+    audioClose.currentTime = 0;
+  };
+
+  const handleClickOpen = () => {
+    setIsDescription((prev) => !prev);
+
+    playAudioOpen();
+  };
+
+  const handleClickClose = () => {
+    setIsDescription((prev) => !prev);
+
+    playAudioClose();
+  };
+
+  useEffect(() => {
+    audioOpen.addEventListener("ended", stopAudioOpen);
+    return () => {
+      audioOpen.removeEventListener("ended", stopAudioOpen);
+    };
+  }, []);
+
+  useEffect(() => {
+    audioClose.addEventListener("ended", stopAudioClose);
+    return () => {
+      audioClose.removeEventListener("ended", stopAudioClose);
+    };
+  }, []);
+
   return (
     <div className={styles.cardRank}>
       {!isDescription ? (
@@ -73,10 +118,7 @@ function Card({
           </div>
           <div className={styles.info}>
             <h2>{`Rank: ${title}`}</h2>
-            <button
-              className={styles.button_more}
-              onClick={() => setIsDescription((prev) => !prev)}
-            >
+            <button className={styles.button_more} onClick={handleClickOpen}>
               Read more
             </button>
           </div>
@@ -84,10 +126,7 @@ function Card({
       ) : (
         <>
           <div className={styles.description_rank}>{description}</div>
-          <button
-            className={styles.button_hide}
-            onClick={() => setIsDescription((prev) => !prev)}
-          >
+          <button className={styles.button_hide} onClick={handleClickClose}>
             Hide
           </button>
         </>
