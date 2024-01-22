@@ -61,7 +61,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/gallery"
+              href="/new_drop"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className={styles.glow_on_hover}

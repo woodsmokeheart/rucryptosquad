@@ -12,7 +12,6 @@ import Link from "next/link";
 
 const pages = [
   { title: "about us", image: about, link: "/about_us" },
-  { title: "team", image: team, link: "/team" },
   { title: "gallery", image: gallery, link: "/gallery" },
   { title: "lore", image: lore, link: "/lore" },
   { title: "ranks", image: ranks, link: "/ranks" },
