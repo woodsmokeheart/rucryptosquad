@@ -2,7 +2,6 @@ import React from "react";
 
 import VideoBackground from "../components/VideoBackground/VideoBackground";
 import NewDropContent from "../components/NewDropContent/NewDropContent";
-import HeaderNewDrop from "../components/HeaderNewDrop/HeaderNewDrop";
 
 const NewDropPageDesktop = () => {
   return (

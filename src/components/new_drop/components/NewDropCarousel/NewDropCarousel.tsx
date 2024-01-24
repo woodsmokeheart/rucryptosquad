@@ -78,7 +78,7 @@ const NewDropCarousel: React.FC<NewDropCarouselProps> = () => {
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <Image src={image.src} alt={image.alt} />
+              <Image src={image.src} alt={image.alt}  priority/>
             </SwiperSlide>
           ))}
           <div className="autoplay-progress" slot="container-end">
