@@ -1,4 +1,4 @@
-import React, { useRef, ReactElement } from "react";
+import React, { useRef } from "react";
 import styles from "./SliderGallery.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
