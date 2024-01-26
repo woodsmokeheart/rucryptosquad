@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./NewDropContent.module.scss";
 import HeaderNewDrop from "../HeaderNewDrop/HeaderNewDrop";
-import NewDropCarousel from "../NewDropCarousel/NewDropCarousel";
+import Deck from "../Deck/Deck";
 
 const NewDropContent = () => {
   return (
@@ -38,7 +38,7 @@ const NewDropContent = () => {
           <h3>8. Unique references</h3>
           <h3>10. The opportunity to receive merch</h3>
         </div>
-        <NewDropCarousel />
+        <Deck />
       </div>
     </div>
   );

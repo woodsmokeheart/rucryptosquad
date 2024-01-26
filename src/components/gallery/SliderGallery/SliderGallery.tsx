@@ -82,7 +82,7 @@ const SliderGallery: React.FC<SliderGalleryProps> = () => {
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
-              <Image src={image.src} alt={image.alt} priority/>
+              <Image src={image.src} alt={image.alt} priority />
             </SwiperSlide>
           ))}
           <div className="autoplay-progress" slot="container-end">
