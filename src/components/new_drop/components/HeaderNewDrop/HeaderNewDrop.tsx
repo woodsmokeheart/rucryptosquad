@@ -20,10 +20,6 @@ const HeaderNewDrop = () => {
     playAudio();
   };
 
-  const handleMouseLeave = () => {
-    stopAudio();
-  };
-
   useEffect(() => {
     audio.addEventListener("ended", stopAudio);
     return () => {

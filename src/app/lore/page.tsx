@@ -1,10 +1,11 @@
+"use client";
+import LorePageSetting from "@/pages/LorePageSetting";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 
 function Lore() {
   return (
     <main>
-      <Link href="/">Home</Link>
+      <LorePageSetting />
     </main>
   );
 }
